@@ -8,7 +8,7 @@
 /* Body style */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: cornsilk;
+  background-color: #ECF0F1;
 }
 /* em font size - em target the parent container */
 /* rem = root container - body */
@@ -18,10 +18,10 @@ body {
 h1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  color: crimson;
+  color: #2C3E50;
   padding: 1.2rem 0;
   text-align: center;
-  border: 6px crimson double;
+  border: 6px  #2C3E50;
   font-size: 2.5rem;
 }
 
@@ -48,14 +48,14 @@ button {
   font-size: 16px;
   cursor: pointer;
   padding: 0.5rem 1.2rem;
-  background-color: #304F4F;
-  color: cyan;
-  border: 4px solid #dddddd;
+  background-color: #18BC9C;
+  color: white;
+  border: 4px solid #16A085;
 }
 
 button:hover {
-  background-color: black;
-  border: 4px crimson solid;
+  background-color: #16A085;
+  border: 4px solid #18BC9C;
 }
 
 /* List styles */
@@ -72,11 +72,11 @@ button:hover {
 }
 
 .row:nth-child(odd){
-  background-color: #dddddd;
+  background-color: #BDC3C7;
 }
 
 .row:hover {
-  background-color: yellow;
+  background-color: #F39C12;
 }
 
 /* Tab Styles - tablinks */
@@ -96,8 +96,8 @@ button:hover {
 }
 
 .tab button.active {
-  background-color: yellow;
-  color: black;
+  background-color: #18BC9C;
+  color: white;
   font-weight: 700;
 }
 
@@ -130,8 +130,8 @@ button:hover {
 /* Footer styles */
 footer {
   margin-top: 2rem;
-  border: 6px crimson double;
-  color: crimson;
+  border: 6px solid #2C3E50;
+  color: #2C3E50;
   padding: 2rem;
   text-align: right;
   font-size: 1.5rem;
