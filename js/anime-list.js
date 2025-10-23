@@ -16,42 +16,41 @@ class AnimeList{
     const rootElement = document.getElementById(this.rootId);
 
     // Creating the elements for the dom
-    const row = document.createElement('div');
-    const id = document.createElement('div');
-    const nameDiv = document.createElement('div');
-    const yearDiv = document.createElement('div');
-    const watchedDiv = document.createElement('div');
+    const row = document.createElement('tr');
+   const idCell = document.createElement('td');
+   const titleCell = document.createElement('td');
+   const yearCell = document.createElement('td');
+   const watchedCell = document.createElement('td');
     const watchedLabel = document.createElement('label');
+
     const watchedCheck = document.createElement('input');
+
     // Check the input to a checkbox
     watchedCheck.setAttribute("type","checkbox");
 
-    // Adding content into the elements
-    if(watched){
-      watchedCheck.checked = true;
-    } else {
-      watchedCheck.checked = false;
-    }
+    // Set initial checked state
+    watchedCheck.checked = watched;
 
-    id.textContent = `${index}.`;
-    nameDiv.textContent = title;
-    yearDiv.textContent = year;
-    watchedLabel.textContent = 'Watched: ';
+    // Add an onchange event to update the internal data
+    watchedCheck.onchange = () => {
+    this.animeList[index - 1].watched = watchedCheck.checked;
+  };
+
+    idCell.textContent = `${index}.`;
+    titleCell.textContent = title;
+    yearCell.textContent = year;
+    watchedLabel.textContent = 'Watched:';
+    watchedCell.appendChild(watchedLabel);
+    watchedCell.appendChild(watchedCheck);
 
     // Add the class of row onto our row
     row.classList.add('row');
 
-    // Appending the label the checkbox to the watchedDiv
-    watchedDiv.appendChild(watchedLabel);
-    watchedDiv.appendChild(watchedCheck);
-
     // Append the elements to the row
-    row.appendChild(id);
-    row.appendChild(nameDiv);
-    row.appendChild(yearDiv);
-    row.appendChild(watchedDiv);
-
-    // Append the row to the dom
+    row.appendChild(idCell);
+    row.appendChild(titleCell);
+    row.appendChild(yearCell);
+    row.appendChild(watchedCell);
     rootElement.appendChild(row);
   }
   // End animeRow method
